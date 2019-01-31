@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<br><br><br><br><br><br>
+<Center><form id="myForm">
+    <select name="myName">
+        <option value="Pratik">Pratik</option>
+    </select> 
+    <input type="text" name="myName2" placeholder="Proper File-Name">
+    <input type="text" name="myName3" placeholder="Description">
+    <input type="file" name="myFile">
+    <input type="submit" value="Upload File" 
+           onclick="this.value='Uploading..';
+                    google.script.run.withSuccessHandler(fileUploaded)
+                    .uploadFiles(this.parentNode);
+                    return false;">(MAX:10mb file size)
+</form></Center>
+
+<div id="output"></div>
+
+<script>
+    function fileUploaded(status) {
+        document.getElementById('myForm').style.display = 'none';
+        document.getElementById('output').innerHTML = status;
+    }
+</script>
+
+<style>
+ input { display:block; margin: 20px; }
+</style>
+
