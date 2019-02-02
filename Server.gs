@@ -36,11 +36,11 @@ function uploadFiles(form) {
 
     var blob = form.myFile;
     var file = folderimg.createFile(blob);
-    var someshit="FileName:"+file.getName()+"<br> Size:"+(file.getSize())/1024+"kb<br> In Folder:"+form.myName+"<br>";
+    var details="FileName:"+file.getName()+"<br> Size:"+(file.getSize())/1024+"kb<br> In Folder:"+form.myName+"<br>";
 
     file.setDescription(""+firstToUpperCase(form.myName2)+"\n About:"+firstToUpperCase(form.myName3));
 
-    return "<center><h1>File uploaded successfully</h1><br>"+someshit+"</center> "// + file.getUrl();
+    return "<center><h1>File uploaded successfully</h1><br>"+details+"</center> "// + file.getUrl();
 
   } catch (error) {
 
